@@ -7,10 +7,10 @@ sk = socket.socket()
 sk.connect(ip_port)
 
 # sk.sendall('请求占领地球'.encode("utf-8"))
-sk.sendall('ask to conquer earth' )
+sk.sendall('ask to conquer earth'.encode("utf-8") )
 
 server_reply = sk.recv(1024)
-print server_reply
+print (server_reply.decode())
 
 sk.close()
 

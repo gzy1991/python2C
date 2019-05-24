@@ -10,13 +10,13 @@ sk.bind(ip_port)
 sk.listen(5)
 
 while True:
-    print 'server waiting...'
+    print ('server waiting...')
     conn,addr = sk.accept()
 
     client_data = conn.recv(1024)
-    print client_data
+    print (client_data.decode())
     # conn.sendall('不要回答,不要回答,不要回答' )
-    conn.sendall('do not answer' )
+    conn.sendall('do not answer'.encode("utf-8") )
 
     conn.close()
 
